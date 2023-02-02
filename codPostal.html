@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+var arrayProvincias =  {
+  "Las Palmas": {
+    "Mogan": ["35140"],
+    "Vecindario": ["35110"],
+    "Teror": ["35330"]    
+  },
+  "Valladolid": {
+    "Aguasal": ["47002"],
+    "Ataquines": ["47011"],
+    "Carpio": ["47035"]
+  }
+}
+window.onload = function() {
+  var selProvincia = document.getElementById("provincia");
+  var selMunicipio = document.getElementById("municipio");
+  for (var x in arrayProvincias) {
+    selProvincia.options[selProvincia.options.length] = new Option(x, x);
+  }
+  selProvincia.onchange = function() {
+        selMunicipio.length = 1;
+
+    for (var y in arrayProvincias[this.value]) {
+      selMunicipio.options[selMunicipio.options.length] = new Option(y, y);
+    }
+  }
+  selMunicipio.onchange = function() {
+
+    var z = arrayProvincias[selProvincia.value][this.value];
+
+   let div = document.getElementById('resultado');
+   div.innerHTML = z;
+    
+  }
+  
+
+
+}
+</script>
+</head>   
+<body>
+
+<h1>Cascading Dropdown Example</h1>
+
+
+Provincia: <select name="provincia" id="provincia">
+    <option selected disabled hidden>Elige Provincia</option>
+  </select>
+  <br><br>
+Municpio: <select name="municipio" id="municipio">
+    <option selected disabled hidden>Elige Municipio</option>
+  </select>
+  <br><br>
+  <div id="resultado"></div>
+
+
+</body>
+</html>

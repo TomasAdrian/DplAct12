@@ -1,0 +1,79 @@
+<html>
+<head>
+    <style>
+
+    
+#scroll {
+          border: 1px solid black;
+          width: 200px;
+          height: 150px;
+          overflow: scroll;
+        }
+    
+      </style>
+
+<script type = "text/JavaScript" >
+    function Func(name) {
+
+        let men= document.getElementById('mensaje');
+        men.innerHTML=name;
+}
+
+
+</script>
+</head>
+<body onresize="Func('onresize')">
+
+<input type = "button" onclick = "Func('onclick')" value = "onclick" /> <br>
+
+<p ondblclick="Func('ondblclick')">Double-click this!</p>  <br>
+
+onkeyup <input onkeyup="Func('onkeyup')" ><br>
+
+onkeydown <input onkeydown="Func('onkeydown')" > <br>
+
+
+onChange <select id="selectBox" onChange="Func('onchange')">
+    <option> select</option>
+    <option value="1">Option #1</option>
+    <option value="2">Option #2</option>
+ </select><br>
+    
+        
+onchange     <input onchange="Func('onchange')" type="number"> <br>
+
+onfocus   <input id="inp" onfocus="Func('onfocus')" > <br>
+
+onblur <input onblur="Func('onblur')"> <br>
+
+<div onmouseover = "Func('onmouseover')" > 
+<h2> Mouse over h2 </h2> 
+</div> 
+
+<div  onmouseout = "Func('onmouseout')"> 
+<h2> Mouse out h2 tag  </h2> 
+</div>
+
+
+<div id="scroll" onscroll="Func('onscroll')"> 
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    Scroll the element.
+    </div>
+<div id="mensaje"></div>
+</body>
+</html>
